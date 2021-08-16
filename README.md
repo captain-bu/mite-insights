@@ -23,4 +23,10 @@ source venv/bin/activate
 `pip install -r requirements.txt`
 
 #### Execute code
-`python main.py`
+```
+python main.py
+```
+or without activating the virtual environment:
+```
+<path to your project>/mite-insights/venv/bin/python main.py
+```
