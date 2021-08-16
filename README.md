@@ -1,4 +1,12 @@
 ### Installation
+#### Set environment variable
+The API key can be retrieved from ***Mite &#8594; My user:***
+1. Enable "Allow API access"
+2. Copy API key
+3. Save
+```
+export MITE_API_KEY="<your API key>"
+```
 #### Clone project
 ```
 git clone https://github.com/captain-bu/mite-insights
