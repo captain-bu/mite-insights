@@ -4,6 +4,7 @@ The API key can be retrieved from ***Mite &#8594; My user:***
 1. Enable "Allow API access"
 2. Copy API key
 3. Save
+4. Set environment variable e.g. in "~/.zprofile" with following entry:
 ```
 export MITE_API_KEY="<your API key>"
 ```
