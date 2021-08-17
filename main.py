@@ -36,7 +36,7 @@ working_time_minutes = working_time_entries_df['minutes'].sum()
 overtime_minutes = working_time_minutes - no_working_days * 8 * 60
 
 # Creating KPI's for reporting
-mite_insights = {'Working Days': no_working_days, 'Paid Absence (days)': paid_absence_minutes / 60 / 8,
+mite_insights = {'Working Days': no_working_days, 'Sick Leave (days)': paid_absence_minutes / 60 / 8,
                  'Holidays': int(no_holidays_minutes / 60 / 8), 'Overtime': overtime_minutes / 60}
 
 mite_insights_df = pd.DataFrame(mite_insights, index=[1])
@@ -46,5 +46,5 @@ entries_without_note = time_entries_df.query('(note.isna() | note == "") & servi
                                              '& service_name != "Public Holidays" & service_name != "Vacation"')
 
 print(mite_insights_df)
-print("------------------------------------------------------------ \n")
+print("---------------------------------------------------------------------------------------- \n")
 print(entries_without_note[['date_at', 'project_name', 'service_name']])
