@@ -45,6 +45,19 @@ mite_insights_df = pd.DataFrame(mite_insights, index=[1])
 entries_without_note = time_entries_df.query('(note.isna() | note == "") & service_name != "Overtime" '
                                              '& service_name != "Public Holidays" & service_name != "Vacation"')
 
+# Getting entries that have a service names
+entries_with_odd_service = time_entries_df.query('project_name != "foryouandyourcustomers Munich (internal)" '
+                                                 '& (service_name != "Consulting" & service_name != "Sales")'
+                                                 )
+
 print(mite_insights_df)
 print("---------------------------------------------------------------------------------------- \n")
-print(entries_without_note[['date_at', 'project_name', 'service_name']])
+if entries_without_note.empty:
+    print('No entries without empty notes')
+else:
+    print(entries_without_note[['date_at', 'project_name', 'service_name']])
+print("---------------------------------------------------------------------------------------- \n")
+if entries_with_odd_service.empty:
+    print('No entries with odd service names')
+else:
+    print(entries_with_odd_service[['date_at', 'project_name', 'service_name']])
