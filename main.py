@@ -51,13 +51,17 @@ entries_with_odd_service = time_entries_df.query('project_name != "foryouandyour
                                                  )
 
 print(mite_insights_df)
+print("\n")
 print("---------------------------------------------------------------------------------------- \n")
 if entries_without_note.empty:
-    print('No entries without empty notes')
+    print('No entries empty notes')
 else:
+    print("Entries with empty notes")
     print(entries_without_note[['date_at', 'project_name', 'service_name']])
+
 print("---------------------------------------------------------------------------------------- \n")
 if entries_with_odd_service.empty:
     print('No entries with odd service names')
 else:
+    print("Entries with odd service names")
     print(entries_with_odd_service[['date_at', 'project_name', 'service_name']])
